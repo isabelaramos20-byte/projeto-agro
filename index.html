@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Colheita de Inovação — como a tecnologia, sustentabilidade e conhecimento transformam o campo e a sociedade." />
+  <title>Colheita de Inovação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVEGAÇÃO ========== -->
+  <nav id="navbar" role="navigation" aria-label="Menu principal">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Início">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">Colheita<strong>+</strong></span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#inovacao">Inovação</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#impactos">Impactos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header id="hero" role="banner">
+    <div class="hero-bg">
+      <!-- Paisagem SVG ilustrativa -->
+      <svg class="hero-landscape" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#0a3d2e"/>
+            <stop offset="100%" style="stop-color:#1a6b48"/>
+          </linearGradient>
+          <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#2d7a45"/>
+            <stop offset="100%" style="stop-color:#1a4d2e"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="200" cy="280" rx="180" ry="60" fill="#2d7a45" opacity="0.5"/>
+        <ellipse cx="800" cy="290" rx="280" ry="50" fill="#246b3c" opacity="0.6"/>
+        <ellipse cx="1300" cy="275" rx="200" ry="65" fill="#2d7a45" opacity="0.4"/>
+        <!-- Sol / Lua -->
+        <circle cx="1100" cy="80" r="50" fill="#f9e04b" opacity="0.18"/>
+        <circle cx="1100" cy="80" r="35" fill="#f9e04b" opacity="0.25"/>
+        <!-- Montanhas -->
+        <polygon points="0,320 200,140 400,320" fill="#1e5c36" opacity="0.7"/>
+        <polygon points="250,320 500,100 750,320" fill="#25683f" opacity="0.65"/>
+        <polygon points="600,320 900,130 1200,320" fill="#1c5532" opacity="0.7"/>
+        <polygon points="1000,320 1200,160 1440,320" fill="#204d30" opacity="0.65"/>
+        <!-- Plantas / trigo -->
+        <g class="wheat-group" opacity="0.8">
+          <line x1="120" y1="320" x2="120" y2="250" stroke="#8bc34a" stroke-width="2"/>
+          <ellipse cx="120" cy="245" rx="6" ry="14" fill="#aed659" transform="rotate(-10,120,245)"/>
+          <line x1="145" y1="320" x2="145" y2="240" stroke="#8bc34a" stroke-width="2"/>
+          <ellipse cx="145" cy="235" rx="6" ry="14" fill="#aed659" transform="rotate(8,145,235)"/>
+          <line x1="170" y1="320" x2="170" y2="255" stroke="#8bc34a" stroke-width="2"/>
+          <ellipse cx="170" cy="250" rx="6" ry="14" fill="#aed659" transform="rotate(-5,170,250)"/>
+          <!-- repete à direita -->
+          <line x1="1290" y1="320" x2="1290" y2="250" stroke="#8bc34a" stroke-width="2"/>
+          <ellipse cx="1290" cy="245" rx="6" ry="14" fill="#aed659" transform="rotate(-10,1290,245)"/>
+          <line x1="1315" y1="320" x2="1315" y2="240" stroke="#8bc34a" stroke-width="2"/>
+          <ellipse cx="1315" cy="235" rx="6" ry="14" fill="#aed659" transform="rotate(8,1315,235)"/>
+          <line x1="1340" y1="320" x2="1340" y2="255" stroke="#8bc34a" stroke-width="2"/>
+          <ellipse cx="1340" cy="250" rx="6" ry="14" fill="#aed659" transform="rotate(-5,1340,250)"/>
+        </g>
+        <!-- Drone SVG -->
+        <g class="drone-svg" transform="translate(650,60)" aria-label="Drone agrícola">
+          <rect x="-18" y="-4" width="36" height="8" rx="4" fill="#b0bec5"/>
+          <rect x="-4" y="-18" width="8" height="36" rx="4" fill="#b0bec5"/>
+          <circle cx="0" cy="0" r="6" fill="#37474f"/>
+          <ellipse cx="-20" cy="-20" rx="14" ry="4" fill="#78909c" opacity="0.6" class="rotor"/>
+          <ellipse cx="20" cy="-20" rx="14" ry="4" fill="#78909c" opacity="0.6" class="rotor"/>
+          <ellipse cx="-20" cy="20" rx="14" ry="4" fill="#78909c" opacity="0.6" class="rotor"/>
+          <ellipse cx="20" cy="20" rx="14" ry="4" fill="#78909c" opacity="0.6" class="rotor"/>
+          <!-- spray dots -->
+          <circle cx="-4" cy="14" r="2" fill="#64b5f6" opacity="0.7"/>
+          <circle cx="0" cy="18" r="2" fill="#64b5f6" opacity="0.7"/>
+          <circle cx="4" cy="14" r="2" fill="#64b5f6" opacity="0.7"/>
+        </g>
+      </svg>
+      <!-- Partículas decorativas -->
+      <div class="particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+        <span class="particle p6"></span>
+      </div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge">Educação &amp; Futuro</span>
+      <h1 class="hero-title">
+        <span class="title-line1">Colheita de</span>
+        <span class="title-line2">Inovação</span>
+      </h1>
+      <p class="hero-subtitle">
+        Onde a tecnologia floresce, a natureza prospera e o conhecimento alimenta o futuro do campo e da sociedade.
+      </p>
+      <a href="#inovacao" class="hero-btn" aria-label="Explorar o conteúdo">
+        <span>Explorar</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-dot"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========== SEÇÃO 1: O QUE É INOVAÇÃO NO CAMPO ========== -->
+    <section id="inovacao" class="section section-light" aria-labelledby="inovacao-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Conceito</span>
+          <h2 id="inovacao-title">O que é Inovação no Campo?</h2>
+          <p class="section-intro">A inovação agrícola une saber tradicional com ciência moderna para criar um campo mais produtivo, humano e sustentável.</p>
+        </div>
+        <div class="inovacao-grid">
+          <article class="inovacao-card reveal" tabindex="0">
+            <div class="inovacao-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="48" height="48">
+                <circle cx="32" cy="32" r="30" fill="#e8f5e9"/>
+                <path d="M32 14 C20 14 14 24 14 32 C14 44 24 50 32 50 C40 50 50 44 50 32 C50 24 44 14 32 14Z" fill="#4caf50" opacity="0.2"/>
+                <path d="M32 18 C32 18 20 28 20 36 C20 42 25.4 47 32 47 C38.6 47 44 42 44 36 C44 28 32 18 32 18Z" fill="#388e3c"/>
+                <path d="M32 28 L32 47 M26 34 L32 30 M38 34 L32 30" stroke="#a5d6a7" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Agricultura Moderna</h3>
+            <p>Técnicas avançadas de cultivo, monitoramento por satélite e gestão inteligente do solo aumentam a produtividade com menor impacto ambiental.</p>
+          </article>
+          <article class="inovacao-card reveal" tabindex="0">
+            <div class="inovacao-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="48" height="48">
+                <circle cx="32" cy="32" r="30" fill="#e3f2fd"/>
+                <path d="M20 44 Q20 28 32 20 Q44 28 44 44" fill="#2196f3" opacity="0.2"/>
+                <path d="M32 20 L32 44 M24 32 Q32 26 40 32" stroke="#1976d2" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <circle cx="32" cy="20" r="4" fill="#42a5f5"/>
+                <circle cx="24" cy="32" r="3" fill="#64b5f6"/>
+                <circle cx="40" cy="32" r="3" fill="#64b5f6"/>
+              </svg>
+            </div>
+            <h3>Uso Responsável dos Recursos</h3>
+            <p>Gestão eficiente da água, do solo e da energia garante que as gerações futuras também possam usufruir dos recursos naturais disponíveis.</p>
+          </article>
+          <article class="inovacao-card reveal" tabindex="0">
+            <div class="inovacao-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="48" height="48">
+                <circle cx="32" cy="32" r="30" fill="#fff3e0"/>
+                <rect x="20" y="28" width="24" height="18" rx="3" fill="#ff9800" opacity="0.3"/>
+                <path d="M16 28 L32 16 L48 28" fill="#f57c00" opacity="0.7"/>
+                <rect x="26" y="34" width="12" height="12" rx="2" fill="#ff9800"/>
+                <circle cx="40" cy="20" r="5" fill="#fdd835"/>
+                <path d="M40 14 L40 10 M46 16 L49 13 M48 22 L52 22 M46 28 L49 31 M34 16 L31 13" stroke="#fdd835" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Pesquisa e Tecnologia</h3>
+            <p>Centros de pesquisa desenvolvem sementes melhoradas, defensivos biológicos e equipamentos que revolucionam a produção agropecuária nacional e global.</p>
+          </article>
+          <article class="inovacao-card reveal" tabindex="0">
+            <div class="inovacao-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="48" height="48">
+                <circle cx="32" cy="32" r="30" fill="#f3e5f5"/>
+                <path d="M20 44 L20 26 L32 20 L44 26 L44 44Z" fill="#9c27b0" opacity="0.2"/>
+                <circle cx="32" cy="32" r="8" fill="#7b1fa2" opacity="0.5"/>
+                <path d="M20 26 L32 32 L44 26 M32 32 L32 44" stroke="#ce93d8" stroke-width="2" fill="none"/>
+                <circle cx="20" cy="26" r="4" fill="#ab47bc"/>
+                <circle cx="44" cy="26" r="4" fill="#ab47bc"/>
+                <circle cx="32" cy="44" r="4" fill="#ab47bc"/>
+              </svg>
+            </div>
+            <h3>Benefícios para Todos</h3>
+            <p>Da fazenda à mesa, a inovação reduz custos, melhora a qualidade dos alimentos e cria empregos, beneficiando produtores, consumidores e o planeta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO 2: TECNOLOGIAS ========== -->
+    <section id="tecnologias" class="section section-dark" aria-labelledby="tec-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Futuro</span>
+          <h2 id="tec-title">Tecnologias que Transformam</h2>
+          <p class="section-intro">Conheça as ferramentas que estão redefinindo a agricultura e moldando o amanhã do campo brasileiro e mundial.</p>
+        </div>
+        <div class="tech-grid">
+
+          <article class="tech-card reveal" tabindex="0">
+            <div class="tech-icon-wrap" aria-hidden="true">
+              <!-- Ícone Drone -->
+              <svg viewBox="0 0 56 56" width="52" height="52">
+                <rect x="20" y="24" width="16" height="8" rx="3" fill="#90caf9"/>
+                <rect x="25" y="17" width="6" height="22" rx="3" fill="#90caf9"/>
+                <circle cx="28" cy="28" r="4" fill="#1565c0"/>
+                <ellipse cx="16" cy="18" rx="10" ry="3" fill="#42a5f5" opacity="0.7" class="spin-slow"/>
+                <ellipse cx="40" cy="18" rx="10" ry="3" fill="#42a5f5" opacity="0.7" class="spin-slow"/>
+                <ellipse cx="16" cy="38" rx="10" ry="3" fill="#42a5f5" opacity="0.7" class="spin-slow"/>
+                <ellipse cx="40" cy="38" rx="10" ry="3" fill="#42a5f5" opacity="0.7" class="spin-slow"/>
+              </svg>
+            </div>
+            <h3>Drones Agrícolas</h3>
+            <p>Aeronaves não tripuladas monitoram lavouras, aplicam defensivos com precisão milimétrica e fornecem imagens multiespectrais que detectam doenças antes mesmo de serem visíveis a olho nu.</p>
+            <span class="tech-badge">Precisão</span>
+          </article>
+
+          <article class="tech-card reveal" tabindex="0">
+            <div class="tech-icon-wrap" aria-hidden="true">
+              <!-- Ícone Sensor -->
+              <svg viewBox="0 0 56 56" width="52" height="52">
+                <rect x="18" y="30" width="20" height="14" rx="3" fill="#a5d6a7"/>
+                <rect x="24" y="16" width="8" height="16" rx="2" fill="#66bb6a"/>
+                <circle cx="28" cy="14" r="5" fill="#2e7d32"/>
+                <path d="M14 20 Q10 28 14 36 M42 20 Q46 28 42 36" stroke="#4caf50" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M18 22 Q15 28 18 34 M38 22 Q41 28 38 34" stroke="#81c784" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="22" cy="36" r="2" fill="#1b5e20"/>
+                <circle cx="28" cy="38" r="2" fill="#1b5e20"/>
+                <circle cx="34" cy="36" r="2" fill="#1b5e20"/>
+              </svg>
+            </div>
+            <h3>Sensores Inteligentes</h3>
+            <p>Dispositivos IoT instalados no solo e nas plantas medem temperatura, umidade, nutrientes e pH em tempo real, enviando dados para smartphones e sistemas de gestão agrícola.</p>
+            <span class="tech-badge">IoT</span>
+          </article>
+
+          <article class="tech-card reveal" tabindex="0">
+            <div class="tech-icon-wrap" aria-hidden="true">
+              <!-- Ícone Irrigação -->
+              <svg viewBox="0 0 56 56" width="52" height="52">
+                <rect x="10" y="26" width="36" height="6" rx="3" fill="#4dd0e1"/>
+                <rect x="18" y="18" width="6" height="10" rx="2" fill="#00bcd4"/>
+                <rect x="32" y="18" width="6" height="10" rx="2" fill="#00bcd4"/>
+                <path d="M18 32 L16 44 M25 32 L25 44 M32 32 L34 44" stroke="#26c6da" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="16" cy="46" r="3" fill="#00acc1"/>
+                <circle cx="25" cy="46" r="3" fill="#00acc1"/>
+                <circle cx="34" cy="46" r="3" fill="#00acc1"/>
+                <path d="M12 20 Q18 12 28 14 Q38 12 44 20" stroke="#80deea" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Irrigação Eficiente</h3>
+            <p>Sistemas de gotejamento e aspersão controlados por algoritmos inteligentes entregam a quantidade exata de água que cada cultura necessita, reduzindo o consumo hídrico em até 60%.</p>
+            <span class="tech-badge">Economia</span>
+          </article>
+
+          <article class="tech-card reveal" tabindex="0">
+            <div class="tech-icon-wrap" aria-hidden="true">
+              <!-- Ícone Energia Solar -->
+              <svg viewBox="0 0 56 56" width="52" height="52">
+                <circle cx="28" cy="28" r="10" fill="#fdd835"/>
+                <path d="M28 10 L28 6 M28 50 L28 46 M10 28 L6 28 M50 28 L46 28 M16 16 L13 13 M43 43 L40 40 M40 16 L43 13 M13 43 L16 40" stroke="#f9a825" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M14 38 L42 38 L38 48 L18 48Z" fill="#ffcc02" opacity="0.4"/>
+                <rect x="22" y="38" width="12" height="2" fill="#f9a825"/>
+              </svg>
+            </div>
+            <h3>Energia Renovável</h3>
+            <p>Painéis solares e turbinas eólicas alimentam maquinários, bombas d'água e sistemas de armazenamento, tornando as propriedades rurais cada vez mais autossuficientes e sustentáveis.</p>
+            <span class="tech-badge">Verde</span>
+          </article>
+
+          <article class="tech-card reveal" tabindex="0">
+            <div class="tech-icon-wrap" aria-hidden="true">
+              <!-- Ícone IA -->
+              <svg viewBox="0 0 56 56" width="52" height="52">
+                <rect x="14" y="18" width="28" height="22" rx="6" fill="#ce93d8" opacity="0.3"/>
+                <rect x="18" y="22" width="20" height="14" rx="4" fill="#9c27b0" opacity="0.5"/>
+                <circle cx="24" cy="29" r="3" fill="#7b1fa2"/>
+                <circle cx="32" cy="29" r="3" fill="#7b1fa2"/>
+                <path d="M24 32 Q28 35 32 32" stroke="#ce93d8" stroke-width="1.5" fill="none"/>
+                <path d="M14 28 L10 28 M42 28 L46 28" stroke="#ab47bc" stroke-width="2" stroke-linecap="round"/>
+                <path d="M22 18 L20 14 M34 18 L36 14" stroke="#ab47bc" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="10" cy="28" r="2" fill="#ce93d8"/>
+                <circle cx="46" cy="28" r="2" fill="#ce93d8"/>
+              </svg>
+            </div>
+            <h3>Inteligência Artificial</h3>
+            <p>Modelos de aprendizado de máquina analisam imagens satelitais, preveem colheitas, identificam pragas e recomendam ações específicas para cada talhão da propriedade rural.</p>
+            <span class="tech-badge">IA</span>
+          </article>
+
+          <article class="tech-card reveal" tabindex="0">
+            <div class="tech-icon-wrap" aria-hidden="true">
+              <!-- Ícone Máquina Agrícola -->
+              <svg viewBox="0 0 56 56" width="52" height="52">
+                <rect x="10" y="26" width="30" height="16" rx="4" fill="#ff8f00" opacity="0.3"/>
+                <rect x="12" y="28" width="26" height="12" rx="3" fill="#e65100" opacity="0.6"/>
+                <rect x="28" y="20" width="14" height="10" rx="2" fill="#ff8f00"/>
+                <circle cx="18" cy="42" r="7" fill="#bf360c" opacity="0.8"/>
+                <circle cx="18" cy="42" r="4" fill="#d84315"/>
+                <circle cx="18" cy="42" r="2" fill="#ff8f00"/>
+                <circle cx="38" cy="42" r="5" fill="#bf360c" opacity="0.8"/>
+                <circle cx="38" cy="42" r="3" fill="#d84315"/>
+                <circle cx="38" cy="42" r="1.5" fill="#ff8f00"/>
+                <rect x="32" y="22" width="3" height="6" rx="1" fill="#fff8e1"/>
+              </svg>
+            </div>
+            <h3>Máquinas Modernas</h3>
+            <p>Tratores autônomos com GPS de alta precisão, colheitadeiras inteligentes e plantadeiras automatizadas aumentam a capacidade produtiva com muito mais eficiência e segurança operacional.</p>
+            <span class="tech-badge">Automação</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO 3: SUSTENTABILIDADE ========== -->
+    <section id="sustentabilidade" class="section section-light" aria-labelledby="sust-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Planeta</span>
+          <h2 id="sust-title">Sustentabilidade no Campo</h2>
+          <p class="section-intro">Produzir mais com menos impacto é o desafio e o compromisso da agricultura do século XXI.</p>
+        </div>
+        <div class="sust-infographic reveal">
+
+          <div class="sust-item sust-ambiental">
+            <div class="sust-circle" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="70" height="70">
+                <circle cx="40" cy="40" r="38" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+                <path d="M40 15 C28 15 18 26 20 38 C22 50 32 55 40 55 C48 55 58 50 60 38 C62 26 52 15 40 15Z" fill="#81c784"/>
+                <path d="M40 55 L40 68 M33 62 L40 55 L47 62" stroke="#2e7d32" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="sust-info">
+              <h3>Preservação Ambiental</h3>
+              <p>Manutenção de matas ciliares, corredores ecológicos e reservas legais preserva a biodiversidade e regula o clima regional.</p>
+              <div class="sust-bar-wrap" aria-label="Indicador de impacto: 88%">
+                <div class="sust-bar" data-width="88" style="--bar-color:#4caf50"></div>
+                <span>88%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sust-item sust-agua">
+            <div class="sust-circle" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="70" height="70">
+                <circle cx="40" cy="40" r="38" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+                <path d="M40 16 C40 16 24 32 24 44 C24 53 31.2 60 40 60 C48.8 60 56 53 56 44 C56 32 40 16 40 16Z" fill="#64b5f6"/>
+                <path d="M32 44 Q36 40 40 44 Q44 48 48 44" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="sust-info">
+              <h3>Economia de Água</h3>
+              <p>Captação de chuva, reutilização de efluentes e irrigação inteligente reduzem o consumo hídrico sem comprometer a produtividade das lavouras.</p>
+              <div class="sust-bar-wrap" aria-label="Indicador de impacto: 74%">
+                <div class="sust-bar" data-width="74" style="--bar-color:#2196f3"></div>
+                <span>74%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sust-item sust-residuos">
+            <div class="sust-circle" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="70" height="70">
+                <circle cx="40" cy="40" r="38" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+                <path d="M26 56 L30 30 L40 24 L50 30 L54 56Z" fill="#ffb74d" opacity="0.5"/>
+                <path d="M30 56 Q40 48 50 56" stroke="#e65100" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M34 38 Q40 33 46 38 Q40 43 34 38Z" fill="#f57c00"/>
+                <circle cx="40" cy="50" r="3" fill="#e65100"/>
+              </svg>
+            </div>
+            <div class="sust-info">
+              <h3>Redução de Desperdícios</h3>
+              <p>Colheita mecanizada de precisão, logística inteligente e embalagens biodegradáveis diminuem as perdas ao longo de toda a cadeia produtiva de alimentos.</p>
+              <div class="sust-bar-wrap" aria-label="Indicador de impacto: 65%">
+                <div class="sust-bar" data-width="65" style="--bar-color:#ff9800"></div>
+                <span>65%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sust-item sust-solo">
+            <div class="sust-circle" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="70" height="70">
+                <circle cx="40" cy="40" r="38" fill="#efebe9" stroke="#795548" stroke-width="2"/>
+                <path d="M16 52 Q40 44 64 52 L64 64 Q40 58 16 64Z" fill="#a1887f"/>
+                <path d="M16 42 Q40 34 64 42 L64 52 Q40 44 16 52Z" fill="#795548"/>
+                <path d="M16 34 Q40 26 64 34 L64 42 Q40 34 16 42Z" fill="#6d4c41"/>
+                <path d="M30 34 L28 22 L36 18 M50 34 L52 22 L44 18" stroke="#a5d6a7" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <ellipse cx="36" cy="16" rx="5" ry="7" fill="#4caf50" opacity="0.8"/>
+                <ellipse cx="44" cy="16" rx="5" ry="7" fill="#4caf50" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="sust-info">
+              <h3>Conservação do Solo</h3>
+              <p>Plantio direto, rotação de culturas, cobertura vegetal e adubação orgânica preservam a fertilidade do solo para as próximas décadas de produção agrícola.</p>
+              <div class="sust-bar-wrap" aria-label="Indicador de impacto: 82%">
+                <div class="sust-bar" data-width="82" style="--bar-color:#795548"></div>
+                <span>82%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sust-item sust-producao">
+            <div class="sust-circle" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="70" height="70">
+                <circle cx="40" cy="40" r="38" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                <rect x="24" y="32" width="32" height="20" rx="4" fill="#ce93d8" opacity="0.4"/>
+                <rect x="28" y="36" width="24" height="12" rx="3" fill="#9c27b0" opacity="0.5"/>
+                <path d="M28 28 L40 20 L52 28" fill="#7b1fa2" opacity="0.5"/>
+                <path d="M34 44 Q40 40 46 44" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="40" cy="50" r="2" fill="white"/>
+              </svg>
+            </div>
+            <div class="sust-info">
+              <h3>Produção Responsável</h3>
+              <p>Certificações orgânicas, rastreabilidade de alimentos e comércio justo garantem que os produtos cheguem ao consumidor com qualidade, ética e transparência na origem.</p>
+              <div class="sust-bar-wrap" aria-label="Indicador de impacto: 91%">
+                <div class="sust-bar" data-width="91" style="--bar-color:#9c27b0"></div>
+                <span>91%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO 4: QUIZ ========== -->
+    <section id="quiz" class="section section-quiz" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Interativo</span>
+          <h2 id="quiz-title">Teste seus Conhecimentos</h2>
+          <p class="section-intro">5 perguntas sobre inovação, tecnologia e sustentabilidade no campo. Boa sorte!</p>
+        </div>
+        <div class="quiz-wrapper reveal" role="form" aria-label="Quiz educacional">
+          <div id="quiz-container">
+            <div class="quiz-progress">
+              <div class="quiz-progress-bar" id="quiz-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+            </div>
+            <p class="quiz-counter" id="quiz-counter" aria-live="polite">Pergunta 1 de 5</p>
+            <div id="quiz-question-wrap">
+              <h3 id="quiz-question" class="quiz-question-text"></h3>
+              <ul id="quiz-options" class="quiz-options" role="list"></ul>
+            </div>
+            <button id="quiz-next-btn" class="quiz-btn" aria-label="Próxima pergunta" disabled>
+              Próxima <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div id="quiz-result" class="quiz-result hidden" aria-live="assertive">
+            <div class="result-icon" id="result-icon" aria-hidden="true"></div>
+            <h3 id="result-title"></h3>
+            <p id="result-score"></p>
+            <p id="result-message"></p>
+            <button id="quiz-restart-btn" class="quiz-btn">
+              Tentar novamente <span aria-hidden="true">↺</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO 5: CURIOSIDADES ========== -->
+    <section id="curiosidades" class="section section-light" aria-labelledby="cur-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Sabia que…?</span>
+          <h2 id="cur-title">Curiosidades do Campo</h2>
+          <p class="section-intro">Fatos surpreendentes que mostram como a inovação está transformando a agricultura mundial.</p>
+        </div>
+        <div class="curiosidades-grid">
+
+          <div class="curiosidade-card reveal" tabindex="0" aria-label="Clique para revelar a curiosidade sobre drones">
+            <div class="card-front">
+              <div class="cur-icon" aria-hidden="true">🚁</div>
+              <h3>Drones no Campo</h3>
+              <span class="card-hint">Toque para saber mais</span>
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <p>Um drone agrícola pode cobrir até <strong>100 hectares por dia</strong>, o que levaria dias a um operador humano, com aplicação de defensivos até 8x mais eficiente.</p>
+            </div>
+          </div>
+
+          <div class="curiosidade-card reveal" tabindex="0" aria-label="Clique para revelar a curiosidade sobre agricultura de precisão">
+            <div class="card-front">
+              <div class="cur-icon" aria-hidden="true">🛰️</div>
+              <h3>Agricultura de Precisão</h3>
+              <span class="card-hint">Toque para saber mais</span>
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <p>Técnicas de agricultura de precisão podem reduzir o uso de fertilizantes em até <strong>15%</strong> e pesticidas em até <strong>20%</strong>, mantendo ou aumentando a produtividade.</p>
+            </div>
+          </div>
+
+          <div class="curiosidade-card reveal" tabindex="0" aria-label="Clique para revelar a curiosidade sobre energia solar no campo">
+            <div class="card-front">
+              <div class="cur-icon" aria-hidden="true">☀️</div>
+              <h3>Energia Solar Rural</h3>
+              <span class="card-hint">Toque para saber mais</span>
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <p>O Brasil é o <strong>4º maior mercado</strong> de energia solar do mundo. Propriedades rurais com painéis solares chegam a economizar até <strong>R$ 30.000 por ano</strong> em energia elétrica.</p>
+            </div>
+          </div>
+
+          <div class="curiosidade-card reveal" tabindex="0" aria-label="Clique para revelar a curiosidade sobre produção de alimentos">
+            <div class="card-front">
+              <div class="cur-icon" aria-hidden="true">🌾</div>
+              <h3>Produção de Alimentos</h3>
+              <span class="card-hint">Toque para saber mais</span>
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <p>O Brasil produz alimentos para <strong>more de 1 bilhão de pessoas</strong> no mundo. A inovação agrícola aumentou a produtividade da soja em mais de <strong>300%</strong> nos últimos 40 anos.</p>
+            </div>
+          </div>
+
+          <div class="curiosidade-card reveal" tabindex="0" aria-label="Clique para revelar a curiosidade sobre IA na fazenda">
+            <div class="card-front">
+              <div class="cur-icon" aria-hidden="true">🤖</div>
+              <h3>IA na Fazenda</h3>
+              <span class="card-hint">Toque para saber mais</span>
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <p>Sistemas de IA podem identificar <strong>mais de 100 tipos de doenças</strong> em plantas analisando fotos pelo smartphone, com precisão de até 98%, auxiliando produtores rurais de todo o mundo.</p>
+            </div>
+          </div>
+
+          <div class="curiosidade-card reveal" tabindex="0" aria-label="Clique para revelar a curiosidade sobre agricultura vertical">
+            <div class="card-front">
+              <div class="cur-icon" aria-hidden="true">🏙️</div>
+              <h3>Agricultura Vertical</h3>
+              <span class="card-hint">Toque para saber mais</span>
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <p>Fazendas verticais urbanas usam <strong>95% menos água</strong> e produzem até <strong>100x mais alimentos</strong> por metro quadrado do que a agricultura convencional, usando luz LED e hidroponia.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEÇÃO 6: IMPACTOS POSITIVOS ========== -->
+    <section id="impactos" class="section section-dark" aria-labelledby="imp-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Transformação</span>
+          <h2 id="imp-title">Impactos Positivos</h2>
+          <p class="section-intro">A inovação no campo gera ondas de transformação que alcançam toda a sociedade.</p>
+        </div>
+        <div class="impactos-grid">
+
+          <article class="impacto-card reveal" tabindex="0">
+            <div class="impacto-top" style="--accent:#4caf50">
+              <span class="impacto-emoji" aria-hidden="true">🌿</span>
+              <h3>Meio Ambiente</h3>
+            </div>
+            <ul class="impacto-list" role="list">
+              <li>Redução de 30% nas emissões de carbono</li>
+              <li>Preservação de nascentes e biodiversidade</li>
+              <li>Recuperação de áreas degradadas</li>
+              <li>Menor uso de agroquímicos nocivos</li>
+            </ul>
+            <div class="impacto-stat">
+              <span class="counter" data-target="30" aria-label="30 por cento de redução de emissões">0</span>%
+              <small>menos emissões de CO₂</small>
+            </div>
+          </article>
+
+          <article class="impacto-card reveal" tabindex="0">
+            <div class="impacto-top" style="--accent:#2196f3">
+              <span class="impacto-emoji" aria-hidden="true">💰</span>
+              <h3>Economia</h3>
+            </div>
+            <ul class="impacto-list" role="list">
+              <li>Redução de custos de produção</li>
+              <li>Geração de novos empregos tecnológicos</li>
+              <li>Exportações agrícolas competitivas</li>
+              <li>Renda maior para o produtor rural</li>
+            </ul>
+            <div class="impacto-stat">
+              <span class="counter" data-target="45" aria-label="45 bilhões de dólares exportados">0</span>B
+              <small>em exportações anuais</small>
+            </div>
+          </article>
+
+          <article class="impacto-card reveal" tabindex="0">
+            <div class="impacto-top" style="--accent:#ff9800">
+              <span class="impacto-emoji" aria-hidden="true">🏡</span>
+              <h3>Comunidade</h3>
+            </div>
+            <ul class="impacto-list" role="list">
+              <li>Valorização do agricultor familiar</li>
+              <li>Segurança alimentar garantida</li>
+              <li>Menor êxodo rural</li>
+              <li>Fortalecimento da cultura local</li>
+            </ul>
+            <div class="impacto-stat">
+              <span class="counter" data-target="10" aria-label="mais de 10 milhões de famílias beneficiadas">0</span>M+
+              <small>famílias beneficiadas</small>
+            </div>
+          </article>
+
+          <article class="impacto-card reveal" tabindex="0">
+            <div class="impacto-top" style="--accent:#9c27b0">
+              <span class="impacto-emoji" aria-hidden="true">📚</span>
+              <h3>Educação</h3>
+            </div>
+            <ul class="impacto-list" role="list">
+              <li>Novas profissões e carreiras tecnológicas</li>
+              <li>Expansão do ensino técnico rural</li>
+              <li>Intercâmbio de conhecimento global</li>
+              <li>Capacitação contínua de agricultores</li>
+            </ul>
+            <div class="impacto-stat">
+              <span class="counter" data-target="500" aria-label="500 mil profissionais capacitados">0</span>K
+              <small>profissionais capacitados/ano</small>
+            </div>
+          </article>
+
+          <article class="impacto-card reveal" tabindex="0" style="grid-column: span 2;">
+            <div class="impacto-top" style="--accent:#e91e63">
+              <span class="impacto-emoji" aria-hidden="true">🌍</span>
+              <h3>Futuras Gerações</h3>
+            </div>
+            <ul class="impacto-list" role="list">
+              <li>Solo fértil preservado para filhos e netos</li>
+              <li>Tecnologias cada vez mais acessíveis</li>
+              <li>Alimentação saudável e diversificada</li>
+              <li>Planeta mais equilibrado e resiliente</li>
+              <li>Inovação como legado cultural</li>
+            </ul>
+            <div class="impacto-stat">
+              <span class="counter" data-target="2050" aria-label="meta para 2050">0</span>
+              <small>meta global de segurança alimentar</small>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-leaf" aria-hidden="true">🌿</span>
+        <span class="logo-text">Colheita<strong>+</strong> Inovação</span>
+      </div>
+      <p class="footer-tagline">Educação que germina, conhecimento que floresce.</p>
+      <div class="footer-links" role="navigation" aria-label="Links do rodapé">
+        <a href="#hero">Início</a>
+        <a href="#inovacao">Inovação</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#sustentabilidade">Sustentabilidade</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#impactos">Impactos</a>
+      </div>
+      <p class="footer-credits">
+        Desenvolvido com 💚 para a educação &mdash; &copy; <span id="footer-year"></span> Colheita de Inovação. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
